@@ -117,23 +117,14 @@ class KeyvProvider extends SettingProvider {
 	 */
   async set(guild, key, val) {
     const target = this.constructor.getGuildID(guild);
-    const prev = await this.keyv.get(target);
+    const prev = await this.keyv.get(target) || {};
 
-    if (prev) {
-      const cur = prev;
-      cur[key] = val;
+    const cur = prev;
+    cur[key] = val;
 
-      return new Promise(resolve => {
-        this.keyv.set(target, cur).then(() => resolve(val));
-      });
-    } else {
-      const cur = {};
-      cur[key] = val;
-
-      return new Promise(resolve => {
-        this.keyv.set(target, cur).then(() => resolve(val));
-      });
-    }
+    return new Promise(resolve => {
+      this.keyv.set(target, cur).then(() => resolve(val));
+    });
   }
 }
 
