@@ -1,0 +1,28 @@
+{
+  "opts": {
+    "template": "./node_modules/minami"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "source": {
+    "excludePattern": "(^|\\/|\\\\)_",
+    "include": [
+      "docs.md",
+      "index.js"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$"
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": [
+      "jsdoc"
+    ]
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true,
+    "showInheritedInNav": true,
+    "useLongnameInNav": false
+  }
+}

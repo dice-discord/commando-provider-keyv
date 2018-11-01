@@ -1,0 +1,39 @@
+{
+  "author": "Jonah Snider <me@jonahsnider.ninja> (https://jonahsnider.ninja/)",
+  "bugs": {
+    "url": "https://github.com/dice-discord/commando-provider-keyv/issues"
+  },
+  "description": "A Keyv based SettingProvider for the Discord.js Commando framework",
+  "devDependencies": {
+    "eslint": "~5.7.0",
+    "eslint-config-amber": "~2.0.0",
+    "jsdoc": "~3.5.5",
+    "minami": "~1.2.3",
+    "parcel": "~1.10.3"
+  },
+  "homepage": "https://commando-provider-keyv.netlify.com/",
+  "keywords": [
+    "express",
+    "keyv"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "commando-provider-keyv",
+  "peerDependencies": {
+    "discord.js-commando": "^0.10.0",
+    "keyv": "~3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dice-discord/commando-provider-keyv.git"
+  },
+  "scripts": {
+    "generate-docs": "npm run generate-docs:production",
+    "generate-docs:development": "npm run generate-docs:jsdoc && parcel out/*.html",
+    "generate-docs:jsdoc": "jsdoc --configure .jsdoc.json --verbose",
+    "generate-docs:parcel": "parcel build out/*.html --experimental-scope-hoisting",
+    "generate-docs:production": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
+    "lint": "eslint ."
+  },
+  "version": "1.0.0"
+}
