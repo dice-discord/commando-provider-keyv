@@ -2,6 +2,8 @@
 
 A [Keyv](https://github.com/lukechilds/keyv) based SettingProvider for the Discord.js Commando framework.
 
+## [Documentation](https://commando-provider-keyv.netlify.com/)
+
 ## Back-end Support
 
 - Redis
