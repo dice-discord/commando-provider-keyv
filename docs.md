@@ -1,6 +1,6 @@
 # Commando Provider Keyv
 
-A [Keyv](https://github.com/lukechilds/keyv) based SettingProvider for the Discord.js Commando framework.
+A [Keyv](https://github.com/lukechilds/keyv) based `SettingProvider` for the Discord.js Commando framework.
 
 ## Back-end Support
 
