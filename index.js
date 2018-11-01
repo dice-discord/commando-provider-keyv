@@ -128,7 +128,7 @@ class KeyvProvider extends SettingProvider {
       });
     } else {
       const cur = {};
-      prev[key] = val;
+      cur[key] = val;
 
       return new Promise(resolve => {
         this.keyv.set(target, cur).then(() => resolve(val));
