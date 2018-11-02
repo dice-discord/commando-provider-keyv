@@ -26,9 +26,6 @@ class KeyvProvider extends SettingProvider {
   constructor(keyv) {
     super();
     this.keyv = keyv;
-
-    // Clear out old data (users might be using persistent data storage)
-    keyv.clear();
   }
 
   /**
