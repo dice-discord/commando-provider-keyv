@@ -9,7 +9,7 @@
     "excludePattern": "(^|\\/|\\\\)_",
     "include": [
       "docs.md",
-      "index.js"
+      "KeyvProvider.js"
     ],
     "includePattern": ".+\\.js(doc|x)?$"
   },

@@ -14,10 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+/**
+ * @file Keyv provider class
+ * @license Apache-2.0
+ */
+
 const { SettingProvider } = require('discord.js-commando');
 
 /**
- * A [Keyv](https://github.com/lukechilds/keyv) based SettingProvider for the Discord.js Commando framework.
+ * A Keyv based SettingProvider for the Discord.js Commando framework.
+ * @see {@link https://github.com/lukechilds/keyv | Keyv GitHub}
+ * @see {@link https://discord.js.org/#/docs/commando/master/general/welcome | Discord.js Commando documentation}
+ * @augments SettingProvider
  */
 class KeyvProvider extends SettingProvider {
   /**
@@ -31,11 +39,11 @@ class KeyvProvider extends SettingProvider {
   /**
 	 * Removes all settings in a guild
 	 * @param {Guild|string} guild - Guild to clear the settings of
-	 * @return {Promise<boolean>} Whether or not the guild settings to clear
+	 * @return {Promise<void>}
 	 */
   clear(guild) {
     const target = this.constructor.getGuildID(guild);
-    return this.keyv.delete(target);
+    this.keyv.delete(target).then(() => new Promise(resolve => resolve()));
   }
 
   /**
@@ -51,22 +59,17 @@ class KeyvProvider extends SettingProvider {
 	 * @param {Guild|string} guild - Guild the setting is associated with (or 'global')
 	 * @param {string} key - Name of the setting
 	 * @param {*} [defVal] - Value to default to if the setting isn't set on the guild
-	 * @return {*}
-   * @async
+	 * @returns {*}
 	 */
   async get(guild, key, defVal) {
     const target = this.constructor.getGuildID(guild);
     const settings = await this.keyv.get(target);
 
-    if (settings) {
-      if (settings[key]) {
-        // Value exists, so return it
-        return settings[key];
-      } else if (defVal) {
-        // Value doesn't exist, so set it to the default value
-        return this.set(target, key, defVal);
-      }
+    if (settings && settings.hasOwnProperty(key)) {
+      // Value exists, so return it
+      return settings[key];
     } else if (defVal) {
+      // Value doesn't exist, so set it to the default value
       return this.set(target, key, defVal);
     }
     return undefined;
@@ -100,7 +103,6 @@ class KeyvProvider extends SettingProvider {
         this.keyv.set(target, cur).then(() => resolve(prev[key]));
       });
     }
-
     return undefined;
   }
 
@@ -110,11 +112,11 @@ class KeyvProvider extends SettingProvider {
 	 * @param {string} key - Name of the setting
 	 * @param {*} val - Value of the setting
 	 * @return {Promise<*>} New value of the setting
-	 * @async
 	 */
   async set(guild, key, val) {
     const target = this.constructor.getGuildID(guild);
-    const prev = await this.keyv.get(target) || {};
+    let prev = await this.keyv.get(target);
+    if (prev === undefined) prev = {};
 
     const cur = prev;
     cur[key] = val;
