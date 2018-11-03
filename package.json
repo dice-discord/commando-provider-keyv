@@ -35,5 +35,5 @@
     "generate-docs:production": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
     "lint": "eslint ."
   },
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

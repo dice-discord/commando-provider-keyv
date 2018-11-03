@@ -122,7 +122,11 @@ class KeyvProvider extends SettingProvider {
     cur[key] = val;
 
     return new Promise(resolve => {
-      this.keyv.set(target, cur).then(() => resolve(val));
+      if (target === 'global') {
+        this.keyv.set(target, cur, 0).then(() => resolve(val));
+      } else {
+        this.keyv.set(target, cur).then(() => resolve(val));
+      }
     });
   }
 }
