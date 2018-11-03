@@ -62,7 +62,7 @@ const KeyvProvider = require('commando-provider-keyv');
 
 const client = new CommandoClient();
 
-client.setProvider(new KeyvProvider(new Keyv(sqlite://path/to/dbname.sqlite)));
+client.setProvider(new KeyvProvider(new Keyv('sqlite://path/to/dbname.sqlite')));
 ```
 
 ### PostgreSQL
