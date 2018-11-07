@@ -82,6 +82,29 @@ class KeyvProvider extends SettingProvider {
 	 */
   init(client) {
     this.client = client;
+
+    this.listeners
+      .set('commandPrefixChange', (guild, prefix) => this.set(guild, 'prefix', prefix))
+      .set('commandStatusChange', (guild, command, enabled) => this.set(guild, `cmd-${command.name}`, enabled))
+      .set('groupStatusChange', (guild, group, enabled) => this.set(guild, `grp-${group.id}`, enabled))
+      .set('guildCreate', guild => {
+        const settings = this.settings.get(guild.id);
+        if (!settings) return;
+        this.setupGuild(guild.id, settings);
+      })
+      .set('commandRegister', command => {
+        for (const [guild, settings] of this.settings) {
+          if (guild !== 'global' && !client.guilds.has(guild)) continue;
+          this.setupGuildCommand(client.guilds.get(guild), command, settings);
+        }
+      })
+      .set('groupRegister', group => {
+        for (const [guild, settings] of this.settings) {
+          if (guild !== 'global' && !client.guilds.has(guild)) continue;
+          this.setupGuildGroup(client.guilds.get(guild), group, settings);
+        }
+      });
+    for (const [event, listener] of this.listeners) client.on(event, listener);
   }
 
   /**
