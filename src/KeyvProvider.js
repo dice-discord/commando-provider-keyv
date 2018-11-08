@@ -34,6 +34,9 @@ class KeyvProvider extends SettingProvider {
   constructor(keyv) {
     super();
     this.keyv = keyv;
+    this.listeners = new Map();
+
+    Object.defineProperty(this, 'client', { value: null, writable: true });
   }
 
   /**
@@ -76,7 +79,7 @@ class KeyvProvider extends SettingProvider {
   }
 
   /**
-	 * This doesn't really do anything, but Commando calls this so I have to put something here
+	 * Initialises the provider by connecting to databases and/or caching all data in memory.
 	 * {@link CommandoClient#setProvider} will automatically call this once the client is ready.
 	 * @param {CommandoClient} client - Client that will be using the provider
 	 */
@@ -84,26 +87,10 @@ class KeyvProvider extends SettingProvider {
     this.client = client;
 
     this.listeners
-      .set('commandPrefixChange', (guild, prefix) => this.set(guild, 'prefix', prefix))
-      .set('commandStatusChange', (guild, command, enabled) => this.set(guild, `cmd-${command.name}`, enabled))
-      .set('groupStatusChange', (guild, group, enabled) => this.set(guild, `grp-${group.id}`, enabled))
-      .set('guildCreate', guild => {
-        const settings = this.settings.get(guild.id);
-        if (!settings) return;
-        this.setupGuild(guild.id, settings);
-      })
-      .set('commandRegister', command => {
-        for (const [guild, settings] of this.settings) {
-          if (guild !== 'global' && !client.guilds.has(guild)) continue;
-          this.setupGuildCommand(client.guilds.get(guild), command, settings);
-        }
-      })
-      .set('groupRegister', group => {
-        for (const [guild, settings] of this.settings) {
-          if (guild !== 'global' && !client.guilds.has(guild)) continue;
-          this.setupGuildGroup(client.guilds.get(guild), group, settings);
-        }
-      });
+      .set('commandPrefixChange', (guild, prefix) => this.set(guild.id, 'prefix', prefix))
+      .set('commandStatusChange', (guild, command, enabled) => this.set(guild.id, `cmd-${command.name}`, enabled))
+      .set('groupStatusChange', (guild, group, enabled) => this.set(guild.id, `grp-${group.id}`, enabled));
+
     for (const [event, listener] of this.listeners) client.on(event, listener);
   }
 

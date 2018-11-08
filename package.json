@@ -5,23 +5,26 @@
   },
   "description": "A Keyv based SettingProvider for the Discord.js Commando framework",
   "devDependencies": {
-    "eslint": "~5.7.0",
-    "eslint-config-amber": "~2.0.0",
-    "jsdoc": "~3.5.5",
-    "minami": "~1.2.3",
-    "parcel": "~1.10.3"
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
+    "eslint": "^5.7.0",
+    "eslint-config-amber": "^2.0.0",
+    "jest": "^23.6.0",
+    "jsdoc": "^3.5.5",
+    "keyv": "^3.1.0",
+    "minami": "^1.2.3",
+    "parcel": "^1.10.3"
   },
   "homepage": "https://commando-provider-keyv.netlify.com/",
   "keywords": [
-    "express",
     "keyv"
   ],
   "license": "Apache-2.0",
-  "main": "KeyvProvider.js",
+  "main": "index.js",
   "name": "commando-provider-keyv",
   "peerDependencies": {
     "discord.js-commando": "^0.10.0",
-    "keyv": "~3.1.0"
+    "keyv": "^3.1.0"
   },
   "repository": {
     "type": "git",
@@ -33,7 +36,8 @@
     "generate-docs:jsdoc": "jsdoc --configure .jsdoc.json --verbose",
     "generate-docs:parcel": "parcel build out/*.html --experimental-scope-hoisting",
     "generate-docs:production": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jest"
   },
-  "version": "1.2.1"
+  "version": "1.3.0"
 }

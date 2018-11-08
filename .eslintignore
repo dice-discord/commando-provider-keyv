@@ -1,0 +1,5 @@
+test/coverage
+out
+dist
+.cache
+node_modules
