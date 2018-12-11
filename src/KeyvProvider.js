@@ -19,7 +19,9 @@ limitations under the License.
  * @license Apache-2.0
  */
 
-const { SettingProvider } = require('discord.js-commando');
+const {
+  SettingProvider
+} = require('discord.js-commando');
 
 /**
  * A Keyv based SettingProvider for the Discord.js Commando framework.
@@ -35,35 +37,34 @@ class KeyvProvider extends SettingProvider {
     super();
     this.keyv = keyv;
     this.listeners = new Map();
-
-    Object.defineProperty(this, 'client', { value: null, writable: true });
+    this.client = undefined;
   }
 
   /**
-	 * Removes all settings in a guild
-	 * @param {Guild|string} guild - Guild to clear the settings of
-	 * @return {Promise<void>}
-	 */
+   * Removes all settings in a guild
+   * @param {Guild|string} guild - Guild to clear the settings of
+   * @return {Promise<void>}
+   */
   clear(guild) {
     const target = this.constructor.getGuildID(guild);
     this.keyv.delete(target).then(() => new Promise(resolve => resolve()));
   }
 
   /**
-	 * Destroys the provider, removing any event listeners.
-	 */
+   * Destroys the provider, removing any event listeners.
+   */
   destroy() {
     // Remove all listeners from the client
     for (const [event, listener] of this.listeners) this.client.removeListener(event, listener);
     this.listeners.clear();
   }
   /**
-	 * Obtains a setting for a guild
-	 * @param {Guild|string} guild - Guild the setting is associated with (or 'global')
-	 * @param {string} key - Name of the setting
-	 * @param {*} [defVal] - Value to default to if the setting isn't set on the guild
-	 * @returns {*}
-	 */
+   * Obtains a setting for a guild
+   * @param {Guild|string} guild - Guild the setting is associated with (or 'global')
+   * @param {string} key - Name of the setting
+   * @param {*} [defVal] - Value to default to if the setting isn't set on the guild
+   * @returns {*}
+   */
   async get(guild, key, defVal) {
     const target = this.constructor.getGuildID(guild);
     const settings = await this.keyv.get(target);
@@ -79,12 +80,20 @@ class KeyvProvider extends SettingProvider {
   }
 
   /**
-	 * Initialises the provider by connecting to databases and/or caching all data in memory.
-	 * {@link CommandoClient#setProvider} will automatically call this once the client is ready.
-	 * @param {CommandoClient} client - Client that will be using the provider
-	 */
+   * Initialises the provider by connecting to databases and/or caching all data in memory.
+   * {@link CommandoClient#setProvider} will automatically call this once the client is ready.
+   * @param {CommandoClient} client - Client that will be using the provider
+   */
   init(client) {
     this.client = client;
+
+    client.guilds.forEach(async guild => {
+      const settings = await this.keyv.get(guild.id);
+
+      if (settings) {
+        this.setupGuild(guild, settings);
+      }
+    });
 
     this.listeners
       .set('commandPrefixChange', (guild, prefix) => this.set(guild.id, 'prefix', prefix))
@@ -95,11 +104,11 @@ class KeyvProvider extends SettingProvider {
   }
 
   /**
-	 * Removes a setting from a guild
-	 * @param {Guild|string} guild - Guild the setting is associated with (or 'global')
-	 * @param {string} key - Name of the setting
-	 * @return {Promise<*>} Old value of the setting
-	 */
+   * Removes a setting from a guild
+   * @param {Guild|string} guild - Guild the setting is associated with (or 'global')
+   * @param {string} key - Name of the setting
+   * @return {Promise<*>} Old value of the setting
+   */
   async remove(guild, key) {
     const target = this.constructor.getGuildID(guild);
     const prev = await this.keyv.get(target);
@@ -117,12 +126,12 @@ class KeyvProvider extends SettingProvider {
   }
 
   /**
-	 * Sets a setting for a guild
-	 * @param {Guild|string} guild - Guild to associate the setting with (or 'global')
-	 * @param {string} key - Name of the setting
-	 * @param {*} val - Value of the setting
-	 * @return {Promise<*>} New value of the setting
-	 */
+   * Sets a setting for a guild
+   * @param {Guild|string} guild - Guild to associate the setting with (or 'global')
+   * @param {string} key - Name of the setting
+   * @param {*} val - Value of the setting
+   * @return {Promise<*>} New value of the setting
+   */
   async set(guild, key, val) {
     const target = this.constructor.getGuildID(guild);
     let prev = await this.keyv.get(target);
@@ -138,6 +147,63 @@ class KeyvProvider extends SettingProvider {
         this.keyv.set(target, cur).then(() => resolve(val));
       }
     });
+  }
+
+  /**
+   * Loads settings from the database for a guild
+   * @param {Guild|string} guild - Guild to associate the setting with (or 'global')
+   * @param {string} key - Name of the setting
+   * @param {*} val - Value of the setting
+   * @return {Promise<*>} New value of the setting
+   * @private
+   */
+  setupGuild(guild, settings) {
+    // Load the command prefix
+    if (settings.prefix) {
+      if (guild) {
+        guild._commandPrefix = settings.prefix;
+      } else {
+        this.client._commandPrefix = settings.prefix;
+      }
+    }
+
+    // Load all command/group statuses
+    for (const command of this.client.registry.commands.values()) this.setupGuildCommand(guild, command, settings);
+    for (const group of this.client.registry.groups.values()) this.setupGuildGroup(guild, group, settings);
+  }
+
+  /**
+   * Sets up a command's status in a guild from the guild's settings
+   * @param {?Guild} guild - Guild to set the status in
+   * @param {Command} command - Command to set the status of
+   * @param {Object} settings - Settings of the guild
+   * @private
+   */
+  setupGuildCommand(guild, command, settings) {
+    if (typeof settings[`cmd-${command.name}`] === 'undefined') return;
+    if (guild) {
+      if (!guild._commandsEnabled) guild._commandsEnabled = {};
+      guild._commandsEnabled[command.name] = settings[`cmd-${command.name}`];
+    } else {
+      command._globalEnabled = settings[`cmd-${command.name}`];
+    }
+  }
+
+  /**
+   * Sets up a group's status in a guild from the guild's settings
+   * @param {?Guild} guild - Guild to set the status in
+   * @param {CommandGroup} group - Group to set the status of
+   * @param {Object} settings - Settings of the guild
+   * @private
+   */
+  setupGuildGroup(guild, group, settings) {
+    if (typeof settings[`grp-${group.id}`] === 'undefined') return;
+    if (guild) {
+      if (!guild._groupsEnabled) guild._groupsEnabled = {};
+      guild._groupsEnabled[group.id] = settings[`grp-${group.id}`];
+    } else {
+      group._globalEnabled = settings[`grp-${group.id}`];
+    }
   }
 }
 
