@@ -150,13 +150,11 @@ class KeyvProvider extends SettingProvider {
   }
 
   /**
-   * Loads settings from the database for a guild
-   * @param {Guild|string} guild - Guild to associate the setting with (or 'global')
-   * @param {string} key - Name of the setting
-   * @param {*} val - Value of the setting
-   * @return {Promise<*>} New value of the setting
-   * @private
-   */
+	 * Loads all settings for a guild
+	 * @param {string} guild - Guild ID to load the settings of (or 'global')
+	 * @param {Object} settings - Settings to load
+	 * @private
+	 */
   setupGuild(guild, settings) {
     // Load the command prefix
     if (settings.prefix) {
