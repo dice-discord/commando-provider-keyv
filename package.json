@@ -7,7 +7,7 @@
   "devDependencies": {
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
-    "eslint": "^5.7.0",
+    "eslint": "^5.10.0",
     "eslint-config-amber": "^2.0.0",
     "jest": "^23.6.0",
     "jsdoc": "^3.5.5",
