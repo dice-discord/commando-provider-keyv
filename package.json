@@ -9,11 +9,11 @@
     "discord.js-commando": "^0.10.0",
     "eslint": "^5.10.0",
     "eslint-config-amber": "^2.0.0",
-    "jest": "^23.6.0",
     "jsdoc": "^3.5.5",
     "keyv": "^3.1.0",
     "minami": "^1.2.3",
-    "parcel": "^1.10.3"
+    "parcel": "^1.10.3",
+    "tap": "^12.1.1"
   },
   "homepage": "https://commando-provider-keyv.netlify.com/",
   "keywords": [
@@ -37,7 +37,8 @@
     "generate-docs:parcel": "parcel build out/*.html --experimental-scope-hoisting",
     "generate-docs:production": "npm run generate-docs:jsdoc && npm run generate-docs:parcel",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "tap -J --coverage -R progress --coverage-report=text-summary test/**/*.js",
+    "test:coverage": "tap --coverage-report=html && codecov"
   },
   "version": "2.0.0"
 }
