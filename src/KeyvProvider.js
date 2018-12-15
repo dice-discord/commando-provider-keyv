@@ -56,6 +56,7 @@ class KeyvProvider extends SettingProvider {
     for (const [event, listener] of this.listeners) this.client.removeListener(event, listener);
     this.listeners.clear();
   }
+
   /**
    * Obtains a setting for a guild
    * @param {Guild|string} guild - Guild the setting is associated with (or 'global')
@@ -112,12 +113,14 @@ class KeyvProvider extends SettingProvider {
     const prev = await this.keyv.get(target);
 
     if (prev) {
-      const cur = prev;
+      const old = prev[key];
 
-      delete cur[key];
+      delete prev[key];
 
-      return new Promise(resolve => {
-        this.keyv.set(target, cur).then(() => resolve(prev[key]));
+      return new Promise(async resolve => {
+        await this.keyv.set(target, prev);
+
+        return resolve(old);
       });
     }
     return undefined;
