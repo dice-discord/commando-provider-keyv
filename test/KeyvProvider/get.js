@@ -6,10 +6,18 @@ const keyv = new Keyv();
 const provider = new KeyvProvider(keyv);
 
 tap.test(async childTest => {
-  const val = await provider.get('global', 'getTest', 'getTestValWithDefault');
+  const tag1 = 'getTestValWithDefault';
+  const val = await provider.get('global', tag1, tag1);
 
-  childTest.equal(val, 'getTestValWithDefault', 'gets values with a default');
+  childTest.equal(val, tag1, 'gets values with a default');
 
-  await keyv.set('global', { getTest: 'getTestValNoDefault' });
-  childTest.equal(await provider.get('global', 'getTest'), 'getTestValNoDefault', 'gets values with no default');
+  const tag2 = 'getTestValNoDefault';
+  await keyv.set('global', { getTestValNoDefault: tag2 });
+  childTest.equal(await provider.get('global', tag2), tag2, 'gets values with no default');
+
+  childTest.type(
+    await provider.get('global', 'getTestUndefinedValue'),
+    undefined,
+    'returns undefined when getting a value that doesn\'t exist'
+  );
 });
