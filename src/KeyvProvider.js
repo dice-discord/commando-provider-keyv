@@ -19,9 +19,7 @@ limitations under the License.
  * @license Apache-2.0
  */
 
-const {
-  SettingProvider
-} = require('discord.js-commando');
+const { SettingProvider } = require('discord.js-commando');
 
 /**
  * A Keyv based SettingProvider for the Discord.js Commando framework.
