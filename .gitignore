@@ -81,3 +81,9 @@ typings/
 .fusebox/
 
 # End of https://www.gitignore.io/api/node
+
+# JSDoc output
+out/
+
+# Parcel output
+dist/
