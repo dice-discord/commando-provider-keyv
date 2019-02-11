@@ -19,7 +19,7 @@ limitations under the License.
  * @license Apache-2.0
  */
 
-const { SettingProvider } = require('discord.js-commando');
+const { SettingProvider } = require("discord.js-commando");
 
 /**
  * A Keyv based SettingProvider for the Discord.js Commando framework.
@@ -95,9 +95,9 @@ class KeyvProvider extends SettingProvider {
     });
 
     this.listeners
-      .set('commandPrefixChange', (guild, prefix) => this.set(guild.id, 'prefix', prefix))
-      .set('commandStatusChange', (guild, command, enabled) => this.set(guild.id, `cmd-${command.name}`, enabled))
-      .set('groupStatusChange', (guild, group, enabled) => this.set(guild.id, `grp-${group.id}`, enabled));
+      .set("commandPrefixChange", (guild, prefix) => this.set(guild.id, "prefix", prefix))
+      .set("commandStatusChange", (guild, command, enabled) => this.set(guild.id, `cmd-${command.name}`, enabled))
+      .set("groupStatusChange", (guild, group, enabled) => this.set(guild.id, `grp-${group.id}`, enabled));
 
     for (const [event, listener] of this.listeners) client.on(event, listener);
   }
@@ -142,7 +142,7 @@ class KeyvProvider extends SettingProvider {
     cur[key] = val;
 
     return new Promise(resolve => {
-      if (target === 'global') {
+      if (target === "global") {
         this.keyv.set(target, cur, 0).then(() => resolve(val));
       } else {
         this.keyv.set(target, cur).then(() => resolve(val));
@@ -151,11 +151,11 @@ class KeyvProvider extends SettingProvider {
   }
 
   /**
-	 * Loads all settings for a guild
-	 * @param {string} guild - Guild ID to load the settings of (or 'global')
-	 * @param {Object} settings - Settings to load
-	 * @private
-	 */
+   * Loads all settings for a guild
+   * @param {string} guild - Guild ID to load the settings of (or 'global')
+   * @param {Object} settings - Settings to load
+   * @private
+   */
   setupGuild(guild, settings) {
     // Load the command prefix
     if (settings.prefix) {
@@ -179,7 +179,7 @@ class KeyvProvider extends SettingProvider {
    * @private
    */
   setupGuildCommand(guild, command, settings) {
-    if (typeof settings[`cmd-${command.name}`] === 'undefined') return;
+    if (typeof settings[`cmd-${command.name}`] === "undefined") return;
     if (guild) {
       if (!guild._commandsEnabled) guild._commandsEnabled = {};
       guild._commandsEnabled[command.name] = settings[`cmd-${command.name}`];
@@ -196,7 +196,7 @@ class KeyvProvider extends SettingProvider {
    * @private
    */
   setupGuildGroup(guild, group, settings) {
-    if (typeof settings[`grp-${group.id}`] === 'undefined') return;
+    if (typeof settings[`grp-${group.id}`] === "undefined") return;
     if (guild) {
       if (!guild._groupsEnabled) guild._groupsEnabled = {};
       guild._groupsEnabled[group.id] = settings[`grp-${group.id}`];

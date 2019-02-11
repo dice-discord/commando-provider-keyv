@@ -1,1 +1,1 @@
-module.exports = require('./src/KeyvProvider');
+module.exports = require("./src/KeyvProvider");
