@@ -1,13 +1,16 @@
 devDependencies:
+  '@dice-discord/eslint-config': 1.1.3
   codecov: 3.1.0
   discord.js: 11.4.2
   discord.js-commando: 0.10.0
   eslint: 5.13.0
-  eslint-config-amber: 2.0.0
+  eslint-config-prettier: 4.0.0
+  eslint-plugin-prettier: 3.0.1
   jsdoc: 3.5.5
   keyv: 3.1.0
   minami: 1.2.3
   parcel: 1.11.0
+  prettier: 1.16.4
   tap: 12.5.2
 packages:
   /@babel/code-frame/7.0.0:
@@ -751,6 +754,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3Y6H8xlUlpbGR+XvawiH0UXehqydTmNmEpozWcXymqwcrwYAl5KMvKtQ+TF6f6E08V6Jur7v/ykdDSF+WDEIXQ==
+  /@dice-discord/eslint-config/1.1.3:
+    dependencies:
+      eslint-config-prettier: 3.6.0
+      eslint-plugin-prettier: 3.0.1
+    dev: true
+    resolution:
+      integrity: sha512-MXoy4H4jAZvO/QSwvdcsEy8FlH5n87/9BT1kobaG7JcnBGMlm9cHRq7zr+Sfe58+J+JMeSr58mIWjTXmLHFpnw==
   /@iarna/toml/2.2.1:
     dev: true
     resolution:
@@ -2329,12 +2339,35 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-amber/2.0.0:
+  /eslint-config-prettier/3.6.0:
+    dependencies:
+      get-stdin: 6.0.0
     dev: true
+    hasBin: true
     peerDependencies:
-      eslint: ^5.6.1
+      eslint: '>=3.14.1'
     resolution:
-      integrity: sha512-110dIMEMiIXNr2Oa+fedFFvIsH4VHsK6VcOsjO4P1UqzvXns7kwbZlQpOA37XAMwTM+psVrz4Dg5+x1OA5T2kg==
+      integrity: sha512-ixJ4U3uTLXwJts4rmSVW/lMXjlGwCijhBJHk8iVqKKSifeI0qgFEfWl8L63isfc8Od7EiBALF6BX3jKLluf/jQ==
+  /eslint-config-prettier/4.0.0:
+    dependencies:
+      get-stdin: 6.0.0
+    dev: true
+    hasBin: true
+    peerDependencies:
+      eslint: '>=3.14.1'
+    resolution:
+      integrity: sha512-kWuiJxzV5NwOwZcpyozTzDT5KJhBw292bbYro9Is7BWnbNMg15Gmpluc1CTetiCatF8DRkNvgPAOaSyg+bYr3g==
+  /eslint-plugin-prettier/3.0.1:
+    dependencies:
+      prettier-linter-helpers: 1.0.0
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    peerDependencies:
+      eslint: '>= 5.0.0'
+      prettier: '>= 1.13.0'
+    resolution:
+      integrity: sha512-/PMttrarPAY78PLvV3xfWibMOdMDl57hmlQ2XqFeA37wd+CJ7WSxV7txqjVPHi/AAFKd2lX0ZqfsOc/i5yFCSQ==
   /eslint-scope/4.0.0:
     dependencies:
       esrecurse: 4.2.1
@@ -2589,6 +2622,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
+  /fast-diff/1.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
   /fast-glob/2.2.6:
     dependencies:
       '@mrmlnc/readdir-enhanced': 2.2.1
@@ -2754,6 +2791,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-3Xzn3hh8Bsi/NTeWrHHgmfCYDrw=
+  /get-stdin/6.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
   /get-stream/4.1.0:
     dependencies:
       pump: 3.0.0
@@ -4956,6 +4999,21 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
+  /prettier-linter-helpers/1.0.0:
+    dependencies:
+      fast-diff: 1.2.0
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
+  /prettier/1.16.4:
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-ZzWuos7TI5CKUeQAtFd6Zhm2s6EpAD/ZLApIhsF9pRvRtM1RFo61dM/4MSRUA0SuLugA/zgrZD8m0BaY46Og7g==
   /prism-media/0.0.3:
     dev: true
     resolution:
@@ -6408,13 +6466,16 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@dice-discord/eslint-config': ^1.1.3
   codecov: ^3.1.0
   discord.js: ^11.4.2
   discord.js-commando: ^0.10.0
   eslint: ^5.10.0
-  eslint-config-amber: ^2.0.0
+  eslint-config-prettier: ^4.0.0
+  eslint-plugin-prettier: ^3.0.1
   jsdoc: ^3.5.5
   keyv: ^3.1.0
   minami: ^1.2.3
   parcel: ^1.10.3
+  prettier: ^1.16.4
   tap: ^12.1.1
