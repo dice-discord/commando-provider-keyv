@@ -17,7 +17,7 @@
     "minami": "^1.2.3",
     "parcel": "^1.10.3",
     "prettier": "^1.16.4",
-    "tap": "^12.1.1"
+    "tap": "^13.0.0"
   },
   "homepage": "https://commando-provider-keyv.netlify.com/",
   "keywords": [
