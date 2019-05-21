@@ -1,4 +1,4 @@
 [build]
   publish = "dist"
 
-  command = "curl -L https://unpkg.com/@pnpm/self-installer | node && pnpm install && pnpm run build"
+  command = "curl -L https://unpkg.com/@pnpm/self-installer | node && pnpm install && pnpm run generate-docs"
