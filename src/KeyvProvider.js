@@ -68,7 +68,7 @@ class KeyvProvider extends SettingProvider {
     const target = this.constructor.getGuildID(guild);
     const settings = await this.keyv.get(target);
 
-    if (settings && settings.hasOwnProperty(key)) {
+    if (settings && Object.prototype.hasOwnProperty.call(settings, key)) {
       // Value exists, so return it
       return settings[key];
     } else if (defVal) {
@@ -117,10 +117,8 @@ class KeyvProvider extends SettingProvider {
 
       delete prev[key];
 
-      return new Promise(async resolve => {
-        await this.keyv.set(target, prev);
-
-        return resolve(old);
+      return new Promise(resolve => {
+        return this.keyv.set(target, prev).then(() => {return resolve(old);});
       });
     }
     return undefined;
