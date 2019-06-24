@@ -117,9 +117,7 @@ class KeyvProvider extends SettingProvider {
 
       delete prev[key];
 
-      return new Promise(resolve => {
-        return this.keyv.set(target, prev).then(() => {return resolve(old);});
-      });
+      return new Promise(resolve => this.keyv.set(target, prev).then(() => resolve(old)));
     }
     return undefined;
   }
