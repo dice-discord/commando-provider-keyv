@@ -1,0 +1,27 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Git checkout"
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Setup latest Node.js LTS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Install PNPM
+        run: curl -L https://unpkg.com/@pnpm/self-installer | node
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: npm run lint
+      - name: Run unit tests
+        run: npm run test
+      - name: Submit test coverage
+        run: npm run test:coverage
