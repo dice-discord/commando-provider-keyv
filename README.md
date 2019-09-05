@@ -1,6 +1,6 @@
 # Commando Provider Keyv
 
-[![Build Status](https://travis-ci.com/dice-discord/commando-provider-keyv.svg?branch=master)](https://travis-ci.com/dice-discord/commando-provider-keyv)
+[![Build Status](https://github.com/dice-discord/commando-provider-keyv/workflows/Node%20CI/badge.svg)](https://github.com/dice-discord/commando-provider-keyv/actions)
 
 A [Keyv](https://github.com/lukechilds/keyv) based `SettingProvider` for the Discord.js Commando framework.
 
