@@ -1,0 +1,12 @@
+.editorconfig
+.eslintignore
+.gitattributes
+test
+.eslintrc.json
+.jsdoc.json
+.prettierrc.json
+docs.md
+README.md
+netlify.toml
+.github
+.nyc_output
