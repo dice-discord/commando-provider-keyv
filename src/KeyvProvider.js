@@ -86,7 +86,7 @@ class KeyvProvider extends SettingProvider {
   init(client) {
     this.client = client;
 
-    client.guilds.forEach(async guild => {
+    (client.guilds.cache || client.guilds).forEach(async guild => {
       const settings = await this.keyv.get(guild.id);
 
       if (settings) {
