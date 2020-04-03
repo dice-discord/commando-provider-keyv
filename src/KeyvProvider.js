@@ -175,7 +175,7 @@ class KeyvProvider extends SettingProvider {
    * @private
    */
   setupGuildCommand(guild, command, settings) {
-    if (typeof settings[`cmd-${command.name}`] === "undefined") return;
+    if (settings[`cmd-${command.name}`] === undefined) return;
     if (guild) {
       if (!guild._commandsEnabled) guild._commandsEnabled = {};
       guild._commandsEnabled[command.name] = settings[`cmd-${command.name}`];
@@ -192,7 +192,7 @@ class KeyvProvider extends SettingProvider {
    * @private
    */
   setupGuildGroup(guild, group, settings) {
-    if (typeof settings[`grp-${group.id}`] === "undefined") return;
+    if (settings[`grp-${group.id}`] === undefined) return;
     if (guild) {
       if (!guild._groupsEnabled) guild._groupsEnabled = {};
       guild._groupsEnabled[group.id] = settings[`grp-${group.id}`];
