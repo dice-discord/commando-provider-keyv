@@ -45,5 +45,5 @@
     "test": "tap -J --coverage -R spec test/**/*.js",
     "test:coverage": "tap --coverage-report=html && codecov"
   },
-  "version": "2.0.3"
+  "version": "2.1.0"
 }

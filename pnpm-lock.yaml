@@ -4,10 +4,10 @@ devDependencies:
   discord.js: 11.5.1
   discord.js-commando: 0.10.0_discord.js@11.5.1
   eslint: 6.0.0
-  eslint-config-prettier: 5.0.0_eslint@6.0.0
+  eslint-config-prettier: 6.10.1_eslint@6.0.0
   eslint-plugin-prettier: 3.1.0_eslint@6.0.0+prettier@1.18.2
   jsdoc: 3.6.2
-  keyv: 3.1.0
+  keyv: 4.0.0
   minami: 1.2.3
   parcel: 1.12.3
   prettier: 1.18.2
@@ -2323,6 +2323,22 @@ packages:
       node-opus: ^0.2.7
       opusscript: ^0.0.6
       sodium: ^2.0.3
+      uws: '*'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      erlpack:
+        optional: true
+      libsodium-wrappers:
+        optional: true
+      node-opus:
+        optional: true
+      opusscript:
+        optional: true
+      sodium:
+        optional: true
+      uws:
+        optional: true
     resolution:
       integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
   /doctrine/3.0.0:
@@ -2548,7 +2564,7 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-sZwhSTHVVz78+kYD3t5pCWSYEdVSBR0PXnwjDRsUs8ytIrK8PLXw+6FKp8r3Z7rx4ZszdetWlXYKOHoUrrwPlA==
-  /eslint-config-prettier/5.0.0_eslint@6.0.0:
+  /eslint-config-prettier/6.10.1_eslint@6.0.0:
     dependencies:
       eslint: 6.0.0
       get-stdin: 6.0.0
@@ -2557,7 +2573,7 @@ packages:
     peerDependencies:
       eslint: '>=3.14.1'
     resolution:
-      integrity: sha512-c17Aqiz5e8LEqoc/QPmYnaxQFAHTx2KlCZBPxXXjEMmNchOLnV/7j0HoPZuC+rL/tDC9bazUYOKJW9bOhftI/w==
+      integrity: sha512-svTy6zh1ecQojvpbJSgH3aei/Rt7C6i090l5f2WQ4aB05lYHeZIR1qL4wZyyILTbtmnbHP5Yn8MrsOJMGa8RkQ==
   /eslint-plugin-prettier/3.1.0_eslint@6.0.0+prettier@1.18.2:
     dependencies:
       eslint: 6.0.0
@@ -3962,10 +3978,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
-  /json-buffer/3.0.0:
+  /json-buffer/3.0.1:
     dev: true
     resolution:
-      integrity: sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=
+      integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==
   /json-parse-better-errors/1.0.2:
     dev: true
     resolution:
@@ -4018,12 +4034,12 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-MT5mvB5cwG5Di8G3SZwuXFastqI=
-  /keyv/3.1.0:
+  /keyv/4.0.0:
     dependencies:
-      json-buffer: 3.0.0
+      json-buffer: 3.0.1
     dev: true
     resolution:
-      integrity: sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==
+      integrity: sha512-U7ioE8AimvRVLfw4LffyOIRhL2xVgmE8T22L6i0BucSnBUyv4w+I7VN/zVZwRKHOI6ZRUcdMdWHQ8KSUvGpEog==
   /kind-of/3.2.2:
     dependencies:
       is-buffer: 1.1.6
@@ -7198,10 +7214,10 @@ specifiers:
   discord.js: ^11.4.2
   discord.js-commando: ^0.10.0
   eslint: ^6.0.0
-  eslint-config-prettier: ^5.0.0
+  eslint-config-prettier: ^6.0.0
   eslint-plugin-prettier: ^3.0.1
   jsdoc: ^3.5.5
-  keyv: ^3.1.0
+  keyv: ^4.0.0
   minami: ^1.2.3
   parcel: ^1.10.3
   prettier: ^1.16.4
