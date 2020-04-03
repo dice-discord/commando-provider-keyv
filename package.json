@@ -24,7 +24,7 @@
     "keyv"
   ],
   "license": "Apache-2.0",
-  "main": "index.js",
+  "main": "src/KeyvProvider.js",
   "name": "commando-provider-keyv",
   "peerDependencies": {
     "discord.js-commando": "^0.10.0",
