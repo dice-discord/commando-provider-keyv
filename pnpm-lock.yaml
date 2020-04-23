@@ -1,8 +1,8 @@
 devDependencies:
   '@dice-discord/eslint-config': 3.0.0_eslint@6.8.0+prettier@1.19.1
   codecov: 3.6.5
-  discord.js: 11.6.4
-  discord.js-commando: 0.10.0_discord.js@11.6.4
+  discord.js: 12.2.0
+  discord.js-commando: 0.10.0_discord.js@12.2.0
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0_eslint@6.8.0
   eslint-plugin-prettier: 3.1.3_eslint@6.8.0+prettier@1.19.1
@@ -905,6 +905,20 @@ packages:
       prettier: ^1.16.4
     resolution:
       integrity: sha512-CmMW8keN4ShlMlntcl8hfcmEQJGDiN2p6GRdBxpp07A/pASSrPKe5QkEohGU0HQh1Xsgfb2Lhe3+0AvZZHsSOw==
+  /@discordjs/collection/0.1.5:
+    dev: true
+    resolution:
+      integrity: sha512-CU1q0UXQUpFNzNB7gufgoisDHP7n+T3tkqTsp3MNUkVJ5+hS3BCvME8uCXAUFlz+6T2FbTCu75A+yQ7HMKqRKw==
+  /@discordjs/form-data/3.0.1:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.26
+    dev: true
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-ZfFsbgEXW71Rw/6EtBdrP5VxBJy4dthyC0tpQKGKmYFImlmmrykO14Za+BiIVduwjte0jXEBlhSKf0MWbFp9Eg==
   /@iarna/toml/2.2.5:
     dev: true
     resolution:
@@ -986,6 +1000,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tsFzPpcttalNjFBCFMqsKYQcWxxen1pgJR56by//QwvJc4/OUS3kPOOttx2tSIfjsylB0pYu7f5D3K1RCxUnUg==
+  /abort-controller/3.0.0:
+    dependencies:
+      event-target-shim: 5.0.1
+    dev: true
+    engines:
+      node: '>=6.5'
+    resolution:
+      integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
   /acorn-globals/4.3.4:
     dependencies:
       acorn: 6.4.1
@@ -2287,10 +2309,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==
-  /discord.js-commando/0.10.0_discord.js@11.6.4:
+  /discord.js-commando/0.10.0_discord.js@12.2.0:
     dependencies:
       common-tags: 1.8.0
-      discord.js: 11.6.4
+      discord.js: 12.2.0
       escape-string-regexp: 1.0.5
       require-all: 2.2.0
     dev: true
@@ -2301,44 +2323,41 @@ packages:
       sqlite: ^2.0.0
     resolution:
       integrity: sha1-v6mL8zEIcDdvPHoNe3Nqaj5dCg8=
-  /discord.js/11.6.4:
+  /discord.js/12.2.0:
     dependencies:
-      long: 4.0.0
-      prism-media: 0.0.4
-      snekfetch: 3.6.4
+      '@discordjs/collection': 0.1.5
+      '@discordjs/form-data': 3.0.1
+      abort-controller: 3.0.0
+      node-fetch: 2.6.0
+      prism-media: 1.2.1
+      setimmediate: 1.0.5
       tweetnacl: 1.0.3
-      ws: 6.2.1
+      ws: 7.2.3
     dev: true
     engines:
-      node: '>=6.0.0'
+      node: '>=12.0.0'
     peerDependencies:
-      '@discordjs/opus': ^0.1.0
-      '@discordjs/uws': ^10.149.0
-      bufferutil: ^4.0.0
+      bufferutil: ^4.0.1
       erlpack: discordapp/erlpack
-      libsodium-wrappers: ^0.7.3
-      node-opus: ^0.2.7
-      opusscript: ^0.0.6
-      sodium: ^2.0.3
+      libsodium-wrappers: ^0.7.6
+      sodium: ^3.0.2
+      utf-8-validate: ^5.0.2
+      zlib-sync: ^0.1.6
     peerDependenciesMeta:
-      '@discordjs/opus':
-        optional: true
       bufferutil:
         optional: true
       erlpack:
         optional: true
       libsodium-wrappers:
         optional: true
-      node-opus:
-        optional: true
-      opusscript:
-        optional: true
       sodium:
         optional: true
-      uws:
+      utf-8-validate:
+        optional: true
+      zlib-sync:
         optional: true
     resolution:
-      integrity: sha512-cK6rH1PuGjSjpmEQbnpuTxq1Yv8B89SotyKUFcr4RhnsiZnfBfDOev7DD7v5vhtEyyj51NuMWFoRJzgy/m08Uw==
+      integrity: sha512-Ueb/0SOsxXyqwvwFYFe0msMrGqH1OMqpp2Dpbplnlr4MzcRrFWwsBM9gKNZXPVBHWUKiQkwU8AihXBXIvTTSvg==
   /doctrine/3.0.0:
     dependencies:
       esutils: 2.0.3
@@ -2711,6 +2730,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+  /event-target-shim/5.0.1:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
   /events-to-array/1.1.2:
     dev: true
     resolution:
@@ -4131,10 +4156,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg==
-  /long/4.0.0:
-    dev: true
-    resolution:
-      integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
   /loose-envify/1.4.0:
     dependencies:
       js-tokens: 4.0.0
@@ -5416,10 +5437,24 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
-  /prism-media/0.0.4:
+  /prism-media/1.2.1:
     dev: true
+    peerDependencies:
+      '@discordjs/opus': ^0.1.0
+      ffmpeg-static: ^2.4.0 || ^3.0.0
+      node-opus: ^0.3.1
+      opusscript: ^0.0.6
+    peerDependenciesMeta:
+      '@discordjs/opus':
+        optional: true
+      ffmpeg-static:
+        optional: true
+      node-opus:
+        optional: true
+      opusscript:
+        optional: true
     resolution:
-      integrity: sha512-dG2w7WtovUa4SiYTdWn9H8Bd4JNdei2djtkP/Bk9fXq81j5Q15ZPHYSwhUVvBRbp5zMkGtu0Yk62HuMcly0pRw==
+      integrity: sha512-R3EbKwJiYlTvGwcG1DpUt+06DsxOGS5W4AMEHT7oVOjG93MjpdhGX1whHyjnqknylLMupKAsKMEXcTNRbPe6Vw==
   /private/0.1.8:
     dev: true
     engines:
@@ -6060,11 +6095,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==
-  /snekfetch/3.6.4:
-    deprecated: use node-fetch instead
-    dev: true
-    resolution:
-      integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
   /source-map-resolve/0.5.3:
     dependencies:
       atob: 2.1.2
@@ -7108,6 +7138,20 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  /ws/7.2.3:
+    dev: true
+    engines:
+      node: '>=8.3.0'
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    resolution:
+      integrity: sha512-HTDl9G9hbkNDk98naoR/cHDws7+EyYMOdL1BmjsZXRUjf7d+MficC4B7HLUPlSiho0vg+CWKrGIt/VJBd1xunQ==
   /xml-name-validator/3.0.0:
     dev: true
     resolution:
@@ -7204,7 +7248,7 @@ packages:
 specifiers:
   '@dice-discord/eslint-config': 3.0.0
   codecov: 3.6.5
-  discord.js: 11.6.4
+  discord.js: 12.2.0
   discord.js-commando: 0.10.0
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0

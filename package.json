@@ -7,7 +7,7 @@
   "devDependencies": {
     "@dice-discord/eslint-config": "3.0.0",
     "codecov": "3.6.5",
-    "discord.js": "11.6.4",
+    "discord.js": "12.2.0",
     "discord.js-commando": "0.10.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.11.0",
