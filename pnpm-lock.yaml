@@ -1,5 +1,5 @@
 devDependencies:
-  '@dice-discord/eslint-config': 1.3.0_eslint@6.8.0+prettier@1.19.1
+  '@dice-discord/eslint-config': 3.0.0_eslint@6.8.0+prettier@1.19.1
   codecov: 3.6.5
   discord.js: 11.6.4
   discord.js-commando: 0.10.0_discord.js@11.6.4
@@ -893,10 +893,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XjnvNqenk818r5zMaba+sLQjnbda31UfUURv3ei0qPQw4u+j2jMyJ5b11y8ZHYTRSI3NnInQkkkRT4fLqqPdHg==
-  /@dice-discord/eslint-config/1.3.0_eslint@6.8.0+prettier@1.19.1:
+  /@dice-discord/eslint-config/3.0.0_eslint@6.8.0+prettier@1.19.1:
     dependencies:
       eslint: 6.8.0
-      eslint-config-prettier: 4.3.0_eslint@6.8.0
+      eslint-config-prettier: 6.11.0_eslint@6.8.0
       eslint-plugin-prettier: 3.1.3_eslint@6.8.0+prettier@1.19.1
       prettier: 1.19.1
     dev: true
@@ -904,7 +904,7 @@ packages:
       eslint: ^5.15.3
       prettier: ^1.16.4
     resolution:
-      integrity: sha512-lM+95iGzgEM/VTzN5lg+GLatwvPL0131T355wGctGnFbEj/LBD1f7mtTOwE10FdBEugCT9g6vgBkvZAyJrBRfw==
+      integrity: sha512-CmMW8keN4ShlMlntcl8hfcmEQJGDiN2p6GRdBxpp07A/pASSrPKe5QkEohGU0HQh1Xsgfb2Lhe3+0AvZZHsSOw==
   /@iarna/toml/2.2.5:
     dev: true
     resolution:
@@ -2550,16 +2550,6 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-prettier/4.3.0_eslint@6.8.0:
-    dependencies:
-      eslint: 6.8.0
-      get-stdin: 6.0.0
-    dev: true
-    hasBin: true
-    peerDependencies:
-      eslint: '>=3.14.1'
-    resolution:
-      integrity: sha512-sZwhSTHVVz78+kYD3t5pCWSYEdVSBR0PXnwjDRsUs8ytIrK8PLXw+6FKp8r3Z7rx4ZszdetWlXYKOHoUrrwPlA==
   /eslint-config-prettier/6.11.0_eslint@6.8.0:
     dependencies:
       eslint: 6.8.0
@@ -7212,7 +7202,7 @@ packages:
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
-  '@dice-discord/eslint-config': 1.3.0
+  '@dice-discord/eslint-config': 3.0.0
   codecov: 3.6.5
   discord.js: 11.6.4
   discord.js-commando: 0.10.0
