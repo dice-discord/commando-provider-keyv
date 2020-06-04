@@ -1,6 +1,6 @@
 devDependencies:
   '@dice-discord/eslint-config': 3.0.0_eslint@6.8.0+prettier@1.19.1
-  codecov: 3.6.5
+  codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0_discord.js@12.2.0
   eslint: 6.8.0
@@ -1755,7 +1755,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
-  /codecov/3.6.5:
+  /codecov/3.7.0:
     dependencies:
       argv: 0.0.2
       ignore-walk: 3.0.3
@@ -1767,7 +1767,7 @@ packages:
       node: '>=4.0'
     hasBin: true
     resolution:
-      integrity: sha512-v48WuDMUug6JXwmmfsMzhCHRnhUf8O3duqXvltaYJKrO1OekZWpB/eH6iIoaxMl8Qli0+u3OxptdsBOYiD7VAQ==
+      integrity: sha512-uIixKofG099NbUDyzRk1HdGtaG8O+PBUAg3wfmjwXw2+ek+PZp+puRvbTohqrVfuudaezivJHFgTtSC3M8MXww==
   /collection-visit/1.0.0:
     dependencies:
       map-visit: 1.0.0
@@ -7247,7 +7247,7 @@ packages:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 specifiers:
   '@dice-discord/eslint-config': 3.0.0
-  codecov: 3.6.5
+  codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0
   eslint: 6.8.0
