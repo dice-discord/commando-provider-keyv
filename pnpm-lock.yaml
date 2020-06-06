@@ -1,11 +1,11 @@
 devDependencies:
-  '@dice-discord/eslint-config': 3.0.0_eslint@7.1.0+prettier@1.19.1
+  '@dice-discord/eslint-config': 3.0.0_eslint@7.2.0+prettier@1.19.1
   codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0_discord.js@12.2.0
-  eslint: 7.1.0
-  eslint-config-prettier: 6.11.0_eslint@7.1.0
-  eslint-plugin-prettier: 3.1.3_eslint@7.1.0+prettier@1.19.1
+  eslint: 7.2.0
+  eslint-config-prettier: 6.11.0_eslint@7.2.0
+  eslint-plugin-prettier: 3.1.3_eslint@7.2.0+prettier@1.19.1
   jsdoc: 3.6.4
   keyv: 4.0.1
   minami: 1.2.3
@@ -893,11 +893,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XjnvNqenk818r5zMaba+sLQjnbda31UfUURv3ei0qPQw4u+j2jMyJ5b11y8ZHYTRSI3NnInQkkkRT4fLqqPdHg==
-  /@dice-discord/eslint-config/3.0.0_eslint@7.1.0+prettier@1.19.1:
+  /@dice-discord/eslint-config/3.0.0_eslint@7.2.0+prettier@1.19.1:
     dependencies:
-      eslint: 7.1.0
-      eslint-config-prettier: 6.11.0_eslint@7.1.0
-      eslint-plugin-prettier: 3.1.3_eslint@7.1.0+prettier@1.19.1
+      eslint: 7.2.0
+      eslint-config-prettier: 6.11.0_eslint@7.2.0
+      eslint-plugin-prettier: 3.1.3_eslint@7.2.0+prettier@1.19.1
       prettier: 1.19.1
     dev: true
     peerDependencies:
@@ -1015,9 +1015,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-clfQEh21R+D0leSbUdWf3OcfqyaCSAQ8Ryq00bofSekfr9W8u1jyYZo6ir0xu9Gtcf7BjcHJpnbZH7JOCpP60A==
-  /acorn-jsx/5.2.0_acorn@7.1.1:
+  /acorn-jsx/5.2.0_acorn@7.2.0:
     dependencies:
-      acorn: 7.1.1
+      acorn: 7.2.0
     dev: true
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0
@@ -1043,6 +1043,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
+  /acorn/7.2.0:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
   /agent-base/5.1.1:
     dev: true
     engines:
@@ -2588,9 +2595,9 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-prettier/6.11.0_eslint@7.1.0:
+  /eslint-config-prettier/6.11.0_eslint@7.2.0:
     dependencies:
-      eslint: 7.1.0
+      eslint: 7.2.0
       get-stdin: 6.0.0
     dev: true
     hasBin: true
@@ -2598,9 +2605,9 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
-  /eslint-plugin-prettier/3.1.3_eslint@7.1.0+prettier@1.19.1:
+  /eslint-plugin-prettier/3.1.3_eslint@7.2.0+prettier@1.19.1:
     dependencies:
-      eslint: 7.1.0
+      eslint: 7.2.0
       prettier: 1.19.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -2611,7 +2618,7 @@ packages:
       prettier: '>= 1.13.0'
     resolution:
       integrity: sha512-+HG5jmu/dN3ZV3T6eCD7a4BlAySdN7mLIbJYo0z1cFQuI+r2DiTJEFeF68ots93PsnrMxbzIZ2S/ieX+mkrBeQ==
-  /eslint-scope/5.0.0:
+  /eslint-scope/5.1.0:
     dependencies:
       esrecurse: 4.2.1
       estraverse: 4.3.0
@@ -2619,22 +2626,22 @@ packages:
     engines:
       node: '>=8.0.0'
     resolution:
-      integrity: sha512-oYrhJW7S0bxAFDvWqzvMPRm6pcgcnWc4QnofCAqRTRfQC0JcwenzGglTtsLyIuuWFfkqDG9vz67cnttSd53djw==
+      integrity: sha512-iiGRvtxWqgtx5m8EyQUJihBloE4EnYeGE/bz1wSPwJE6tZuJUtHlhqDM4Xj2ukE8Dyy1+HCZ4hE0fzIVMzb58w==
   /eslint-utils/2.0.0:
     dependencies:
-      eslint-visitor-keys: 1.1.0
+      eslint-visitor-keys: 1.2.0
     dev: true
     engines:
       node: '>=6'
     resolution:
       integrity: sha512-0HCPuJv+7Wv1bACm8y5/ECVfYdfsAm9xmVb7saeFlxjPYALefjhbYoCkBjPdPzGH8wWyTpAez82Fh3VKYEZ8OA==
-  /eslint-visitor-keys/1.1.0:
+  /eslint-visitor-keys/1.2.0:
     dev: true
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
-  /eslint/7.1.0:
+      integrity: sha512-WFb4ihckKil6hu3Dp798xdzSfddwKKU3+nGniKF6HfeW6OLd2OUDEPP7TcHtB5+QXOKg2s6B2DaMPE1Nn/kxKQ==
+  /eslint/7.2.0:
     dependencies:
       '@babel/code-frame': 7.8.3
       ajv: 6.12.2
@@ -2642,10 +2649,10 @@ packages:
       cross-spawn: 7.0.3
       debug: 4.1.1
       doctrine: 3.0.0
-      eslint-scope: 5.0.0
+      eslint-scope: 5.1.0
       eslint-utils: 2.0.0
-      eslint-visitor-keys: 1.1.0
-      espree: 7.0.0
+      eslint-visitor-keys: 1.2.0
+      espree: 7.1.0
       esquery: 1.3.1
       esutils: 2.0.3
       file-entry-cache: 5.0.1
@@ -2677,23 +2684,23 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-DfS3b8iHMK5z/YLSme8K5cge168I8j8o1uiVmFCgnnjxZQbCGyraF8bMl7Ju4yfBmCuxD7shOF7eqGkcuIHfsA==
+      integrity: sha512-B3BtEyaDKC5MlfDa2Ha8/D6DsS4fju95zs0hjS3HdGazw+LNayai38A25qMppK37wWGWNYSPOR6oYzlz5MHsRQ==
   /esm/3.2.25:
     dev: true
     engines:
       node: '>=6'
     resolution:
       integrity: sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
-  /espree/7.0.0:
+  /espree/7.1.0:
     dependencies:
-      acorn: 7.1.1
-      acorn-jsx: 5.2.0_acorn@7.1.1
-      eslint-visitor-keys: 1.1.0
+      acorn: 7.2.0
+      acorn-jsx: 5.2.0_acorn@7.2.0
+      eslint-visitor-keys: 1.2.0
     dev: true
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-/r2XEx5Mw4pgKdyb7GNLQNsu++asx/dltf/CI8RFi9oGHxmQFgvLbc5Op4U6i8Oaj+kdslhJtVlEZeAqH5qOTw==
+      integrity: sha512-dcorZSyfmm4WTuTnE5Y7MEN1DyoPYy1ZR783QW1FJoenn7RailyWFsq/UL6ZAAA7uXurN9FIpYyUs3OfiIW+Qw==
   /esprima/3.1.3:
     dev: true
     engines:
@@ -7331,7 +7338,7 @@ specifiers:
   codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0
-  eslint: 7.1.0
+  eslint: 7.2.0
   eslint-config-prettier: 6.11.0
   eslint-plugin-prettier: 3.1.3
   jsdoc: 3.6.4
