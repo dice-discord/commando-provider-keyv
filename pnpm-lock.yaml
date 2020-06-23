@@ -1,16 +1,16 @@
 devDependencies:
-  '@dice-discord/eslint-config': 3.0.0_eslint@7.3.1+prettier@1.19.1
+  '@dice-discord/eslint-config': 3.0.0_eslint@7.3.1+prettier@2.0.5
   codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0_discord.js@12.2.0
   eslint: 7.3.1
   eslint-config-prettier: 6.11.0_eslint@7.3.1
-  eslint-plugin-prettier: 3.1.4_eslint@7.3.1+prettier@1.19.1
+  eslint-plugin-prettier: 3.1.4_eslint@7.3.1+prettier@2.0.5
   jsdoc: 3.6.4
   keyv: 4.0.1
   minami: 1.2.3
   parcel: 1.12.4
-  prettier: 1.19.1
+  prettier: 2.0.5
   tap: 14.10.7
 lockfileVersion: 5.1
 packages:
@@ -893,12 +893,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XjnvNqenk818r5zMaba+sLQjnbda31UfUURv3ei0qPQw4u+j2jMyJ5b11y8ZHYTRSI3NnInQkkkRT4fLqqPdHg==
-  /@dice-discord/eslint-config/3.0.0_eslint@7.3.1+prettier@1.19.1:
+  /@dice-discord/eslint-config/3.0.0_eslint@7.3.1+prettier@2.0.5:
     dependencies:
       eslint: 7.3.1
       eslint-config-prettier: 6.11.0_eslint@7.3.1
-      eslint-plugin-prettier: 3.1.3_eslint@7.3.1+prettier@1.19.1
-      prettier: 1.19.1
+      eslint-plugin-prettier: 3.1.3_eslint@7.3.1+prettier@2.0.5
+      prettier: 2.0.5
     dev: true
     peerDependencies:
       eslint: ^5.15.3
@@ -2582,10 +2582,10 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
-  /eslint-plugin-prettier/3.1.3_eslint@7.3.1+prettier@1.19.1:
+  /eslint-plugin-prettier/3.1.3_eslint@7.3.1+prettier@2.0.5:
     dependencies:
       eslint: 7.3.1
-      prettier: 1.19.1
+      prettier: 2.0.5
       prettier-linter-helpers: 1.0.0
     dev: true
     engines:
@@ -2595,10 +2595,10 @@ packages:
       prettier: '>= 1.13.0'
     resolution:
       integrity: sha512-+HG5jmu/dN3ZV3T6eCD7a4BlAySdN7mLIbJYo0z1cFQuI+r2DiTJEFeF68ots93PsnrMxbzIZ2S/ieX+mkrBeQ==
-  /eslint-plugin-prettier/3.1.4_eslint@7.3.1+prettier@1.19.1:
+  /eslint-plugin-prettier/3.1.4_eslint@7.3.1+prettier@2.0.5:
     dependencies:
       eslint: 7.3.1
-      prettier: 1.19.1
+      prettier: 2.0.5
       prettier-linter-helpers: 1.0.0
     dev: true
     engines:
@@ -5407,13 +5407,13 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
-  /prettier/1.19.1:
+  /prettier/2.0.5:
     dev: true
     engines:
-      node: '>=4'
+      node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+      integrity: sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
   /prism-media/1.2.1:
     dev: true
     peerDependencies:
@@ -7206,5 +7206,5 @@ specifiers:
   keyv: 4.0.1
   minami: 1.2.3
   parcel: 1.12.4
-  prettier: 1.19.1
+  prettier: 2.0.5
   tap: 14.10.7
