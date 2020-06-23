@@ -1,11 +1,11 @@
 devDependencies:
-  '@dice-discord/eslint-config': 3.0.0_eslint@7.3.0+prettier@1.19.1
+  '@dice-discord/eslint-config': 3.0.0_eslint@7.3.1+prettier@1.19.1
   codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0_discord.js@12.2.0
-  eslint: 7.3.0
-  eslint-config-prettier: 6.11.0_eslint@7.3.0
-  eslint-plugin-prettier: 3.1.4_eslint@7.3.0+prettier@1.19.1
+  eslint: 7.3.1
+  eslint-config-prettier: 6.11.0_eslint@7.3.1
+  eslint-plugin-prettier: 3.1.4_eslint@7.3.1+prettier@1.19.1
   jsdoc: 3.6.4
   keyv: 4.0.1
   minami: 1.2.3
@@ -893,11 +893,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XjnvNqenk818r5zMaba+sLQjnbda31UfUURv3ei0qPQw4u+j2jMyJ5b11y8ZHYTRSI3NnInQkkkRT4fLqqPdHg==
-  /@dice-discord/eslint-config/3.0.0_eslint@7.3.0+prettier@1.19.1:
+  /@dice-discord/eslint-config/3.0.0_eslint@7.3.1+prettier@1.19.1:
     dependencies:
-      eslint: 7.3.0
-      eslint-config-prettier: 6.11.0_eslint@7.3.0
-      eslint-plugin-prettier: 3.1.3_eslint@7.3.0+prettier@1.19.1
+      eslint: 7.3.1
+      eslint-config-prettier: 6.11.0_eslint@7.3.1
+      eslint-plugin-prettier: 3.1.3_eslint@7.3.1+prettier@1.19.1
       prettier: 1.19.1
     dev: true
     peerDependencies:
@@ -2572,9 +2572,9 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-6hTjO1NAWkHnDk3OqQ4YrCuwwmGHL9S3nPlzBOUG/R44rda3wLNrfvQ5fkSGjyhHFKM7ALPKcKGrwvCLe0lC7Q==
-  /eslint-config-prettier/6.11.0_eslint@7.3.0:
+  /eslint-config-prettier/6.11.0_eslint@7.3.1:
     dependencies:
-      eslint: 7.3.0
+      eslint: 7.3.1
       get-stdin: 6.0.0
     dev: true
     hasBin: true
@@ -2582,9 +2582,9 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
-  /eslint-plugin-prettier/3.1.3_eslint@7.3.0+prettier@1.19.1:
+  /eslint-plugin-prettier/3.1.3_eslint@7.3.1+prettier@1.19.1:
     dependencies:
-      eslint: 7.3.0
+      eslint: 7.3.1
       prettier: 1.19.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -2595,9 +2595,9 @@ packages:
       prettier: '>= 1.13.0'
     resolution:
       integrity: sha512-+HG5jmu/dN3ZV3T6eCD7a4BlAySdN7mLIbJYo0z1cFQuI+r2DiTJEFeF68ots93PsnrMxbzIZ2S/ieX+mkrBeQ==
-  /eslint-plugin-prettier/3.1.4_eslint@7.3.0+prettier@1.19.1:
+  /eslint-plugin-prettier/3.1.4_eslint@7.3.1+prettier@1.19.1:
     dependencies:
-      eslint: 7.3.0
+      eslint: 7.3.1
       prettier: 1.19.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -2631,7 +2631,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-WFb4ihckKil6hu3Dp798xdzSfddwKKU3+nGniKF6HfeW6OLd2OUDEPP7TcHtB5+QXOKg2s6B2DaMPE1Nn/kxKQ==
-  /eslint/7.3.0:
+  /eslint/7.3.1:
     dependencies:
       '@babel/code-frame': 7.8.3
       ajv: 6.12.2
@@ -2674,7 +2674,7 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-dJMVXwfU5PT1cj2Nv2VPPrKahKTGdX+5Dh0Q3YuKt+Y2UhdL2YbzsVaBMyG9HC0tBismlv/r1+eZqs6SMIV38Q==
+      integrity: sha512-cQC/xj9bhWUcyi/RuMbRtC3I0eW8MH0jhRELSvpKYkWep3C6YZ2OkvcvJVUeO6gcunABmzptbXBuDoXsjHmfTA==
   /esm/3.2.25:
     dev: true
     engines:
@@ -7199,7 +7199,7 @@ specifiers:
   codecov: 3.7.0
   discord.js: 12.2.0
   discord.js-commando: 0.10.0
-  eslint: 7.3.0
+  eslint: 7.3.1
   eslint-config-prettier: 6.11.0
   eslint-plugin-prettier: 3.1.4
   jsdoc: 3.6.4
